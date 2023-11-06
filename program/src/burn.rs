@@ -4,15 +4,6 @@ use solana_program::pubkey::Pubkey;
 
 use crate::generated::state::{Account, AccountPDA, GemMetadata};
 
-/// Accounts:
-/// 0. `[writable, signer]` fee_payer: [AccountInfo] Auto-generated, default fee payer
-/// 1. `[writable]` mint: [Mint]
-/// 2. `[writable]` gem: [GemMetadata]
-/// 3. `[writable]` account: [Account] The account to burn from.
-/// 4. `[signer]` owner: [AccountInfo] The account's owner/delegate.
-/// 5. `[]` wallet: [AccountInfo] Wallet address for the new associated token account
-/// 6. `[]` token_program: [AccountInfo] SPL Token program
-/// 7. `[]` csl_spl_token_v_0_0_0: [AccountInfo] Auto-generated, CslSplTokenProgram v0.0.0
 pub fn burn(
     program_id: &Pubkey,
     for_burn: &[&AccountInfo],

@@ -4,20 +4,6 @@ use solana_program::pubkey::Pubkey;
 
 use crate::generated::state::{Account, AccountPDA, GemMetadata};
 
-/// Accounts:
-/// 0. `[writable, signer]` fee_payer: [AccountInfo] Auto-generated, default fee payer
-/// 1. `[]` mint: [Mint]
-/// 2. `[writable]` gem: [GemMetadata]
-/// 3. `[writable, signer]` funding: [AccountInfo] Funding account (must be a system account)
-/// 4. `[writable]` assoc_token_account: [AccountInfo] Associated token account address to be created
-/// 5. `[]` wallet: [AccountInfo] Wallet address for the new associated token account
-/// 6. `[]` system_program: [AccountInfo] System program
-/// 7. `[]` token_program: [AccountInfo] SPL Token program
-/// 8. `[writable]` source: [AccountInfo] The source account.
-/// 9. `[writable]` destination: [AccountInfo] The destination account.
-/// 10. `[signer]` authority: [AccountInfo] The source account's owner/delegate.
-/// 11. `[]` csl_spl_assoc_token_v_0_0_0: [AccountInfo] Auto-generated, CslSplAssocTokenProgram v0.0.0
-/// 12. `[]` csl_spl_token_v_0_0_0: [AccountInfo] Auto-generated, CslSplTokenProgram v0.0.0
 pub fn transfer(
     program_id: &Pubkey,
     for_create: &[&AccountInfo],
